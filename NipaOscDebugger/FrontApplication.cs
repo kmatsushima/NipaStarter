@@ -48,9 +48,9 @@ namespace NipaStarter
 
             //---------------------------------- Unityのログファイルの管理
 
-            DirectoryInfo unityLogDir = new DirectoryInfo(Path.Combine(logDirectryPath, "Unity_AppLog"));
-            if (unityLogDir.Exists == false)
-                unityLogDir.Create();
+            //DirectoryInfo unityLogDir = new DirectoryInfo(Path.Combine(logDirectryPath, "Unity_AppLog"));
+            //if (unityLogDir.Exists == false)
+            //    unityLogDir.Create();
 
 
             var logFileName = "UnityLog_" + System.DateTime.Now.ToString("yyyyMMddHHmm") + ".txt";
@@ -76,7 +76,7 @@ namespace NipaStarter
                 startInfo.Arguments = string.Format("-popupwindow -screen-width {0} -screen-height {1} -logFile {2}",
                                                     screenWidth,
                                                     screenHeight,
-                                                    Path.Combine(unityLogDir.FullName, logFileName)
+                                                    Path.Combine(logDirectryPath, logFileName)
                                                     );
             else
                 startInfo.Arguments = string.Format("-popupwindow -screen-width {0} -screen-height {1}",

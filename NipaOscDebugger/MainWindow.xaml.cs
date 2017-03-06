@@ -29,6 +29,7 @@ namespace NipaStarter
     {
 
         const string StartCode = "STARTAPP";
+        static string logDirPath;
 
         // DLL インポートの宣言
         [DllImport("kernel32.dll")]
@@ -38,7 +39,7 @@ namespace NipaStarter
         public MainWindow()
         {
             InitializeComponent();
-            UpdateSettings();
+            UpdateSettings(true);
             InitializeOSC();
 
             if (Properties.Settings.Default.AutoStart)
@@ -73,35 +74,58 @@ namespace NipaStarter
             UpdateSettings();
         }
 
+        private void button_openLogDir_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(logDirPath);
+            }
+            catch (Exception)
+            {
+            }
+        }
 
         #endregion
         #region ===================================================================  Settings
 
 
-        void UpdateSettings()
+        void UpdateSettings(bool _isFirst = false)
         {
-            if (textBox_appPath.Text != "")
+            if (!_isFirst && textBox_appPath.Text != "")
                 Properties.Settings.Default.AppPath = textBox_appPath.Text;
+            textBox_appPath.Text = Properties.Settings.Default.AppPath;
 
-            if (textBox_width.Text != "")
+            if (!_isFirst && textBox_width.Text != "")
             {
                 int result;
                 if (int.TryParse(textBox_width.Text, out result))
                       Properties.Settings.Default.AppWidth = result;
             }
+            textBox_width.Text = Properties.Settings.Default.AppWidth.ToString();
 
-            if (textBox_height.Text != "")
+            if (!_isFirst && textBox_height.Text != "")
             {
                 int result;
                 if (int.TryParse(textBox_height.Text, out result))
                     Properties.Settings.Default.AppHeight = result;
             }
+            textBox_height.Text = Properties.Settings.Default.AppHeight.ToString();
 
-            if (textBox_unityLogPath.Text != "")
+            if (!_isFirst && textBox_unityLogPath.Text != "")
                 Properties.Settings.Default.UnityLogPath = textBox_unityLogPath.Text;
+            textBox_unityLogPath.Text = Properties.Settings.Default.UnityLogPath;
+            logDirPath = Properties.Settings.Default.UnityLogPath;
 
-            Properties.Settings.Default.AutoStart = checkBox_awakeStart.IsChecked ?? true;
-            Properties.Settings.Default.KillExp = checkBox_killExplorer.IsChecked ?? true;
+            if (_isFirst)
+            {
+                checkBox_awakeStart.IsChecked = Properties.Settings.Default.AutoStart;
+                checkBox_killExplorer.IsChecked = Properties.Settings.Default.KillExp;
+            }
+            else
+            {
+                Properties.Settings.Default.AutoStart = checkBox_awakeStart.IsChecked ?? true;
+                Properties.Settings.Default.KillExp = checkBox_killExplorer.IsChecked ?? true;
+            }
 
             Properties.Settings.Default.Save();
         }
@@ -133,6 +157,7 @@ namespace NipaStarter
             this.WindowState = System.Windows.WindowState.Minimized;
             this.ShowInTaskbar = false;
         }
+
 
 
         #endregion

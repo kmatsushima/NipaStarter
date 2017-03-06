@@ -16,11 +16,12 @@
         <TextBlock x:Name="textBlock_Copy1" Margin="238.085,100.966,196.18,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Text="Screen "/><Run Text="Height"/></TextBlock>
         <TextBox x:Name="textBox_height" Height="23" Margin="0,98.692,70.573,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="125.607" d:LayoutOverrides="VerticalAlignment"/>
         <Button x:Name="button_apply" Content="Apply &amp; Save" Margin="0,285.642,10,0"  VerticalAlignment="Top" Height="25.358" HorizontalAlignment="Right" Width="163.846" Click="button_apply_Click"/>
-        <TextBox x:Name="textBox_unityLogPath" Height="23" Margin="10,174.645,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy3" Margin="10,153.287,0,0" TextWrapping="Wrap" Text="Unity Log File Directry (empty for no log output)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="21.358"/>
-        <CheckBox x:Name="checkBox_awakeStart" Content="Start App when Awake" HorizontalAlignment="Left" Margin="10,0,0,92.009" VerticalAlignment="Bottom"/>
-        <CheckBox x:Name="checkBox_killExplorer" Content="Kill Explorer When App Start" Margin="172.953,0,0,92.009" VerticalAlignment="Bottom" HorizontalAlignment="Left" d:LayoutOverrides="TopMargin, BottomMargin"/>
+        <TextBox x:Name="textBox_unityLogPath" Height="23" Margin="10,183.193,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBlock x:Name="textBlock_Copy3" Margin="10,157.534,0,0" TextWrapping="Wrap" Text="Unity Log File Directry (empty for no log output)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="21.358"/>
+        <CheckBox x:Name="checkBox_awakeStart" Content="Start App when Awake" HorizontalAlignment="Left" Margin="10,0,0,83.461" VerticalAlignment="Bottom"/>
+        <CheckBox x:Name="checkBox_killExplorer" Content="Kill Explorer When App Start" Margin="172.953,0,0,83.461" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
         <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Right" Margin="0,121.692,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158.072" Text="*Unity must be window mode"/>
+        <Button x:Name="button_openLogDir" Content="Open Log Dir" Margin="0,152.835,10,0"  VerticalAlignment="Top" Height="25.358" HorizontalAlignment="Right" Width="163.846" Click="button_openLogDir_Click" />
 
     </Grid>
 </Window>
