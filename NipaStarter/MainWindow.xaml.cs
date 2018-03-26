@@ -41,6 +41,7 @@ namespace NipaStarter
             InitializeComponent();
             UpdateSettings(true);
             InitializeOSC();
+            UpdateSettings();
 
             if (Properties.Settings.Default.AutoStart)
                 StartApp();
