@@ -124,4 +124,7 @@
   <data name="nipaIcon" xml:space="preserve">
     <value>notifyIcon1.Icon</value>
   </data>
+  <data name="y2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\y2.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

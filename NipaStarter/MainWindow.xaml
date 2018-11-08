@@ -5,23 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:NipaStarter"
         mc:Ignorable="d"
-        Title="NipaStarter" Height="350" Width="525" ResizeMode="NoResize">
-    <Grid Background="#FFBAE0D4">
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,47.964,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="189.113" Text="Application Path"/>
-        <TextBox x:Name="textBox_appPath" Height="23" Margin="10,68.925,10,0" TextWrapping="Wrap" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment"/>
-        <TextBlock x:Name="textBlock_Copy2" Margin="10,0,0,10" TextWrapping="Wrap" Height="64.724" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="369.054" d:LayoutOverrides="TopMargin, BottomMargin"><Run Text="Start App via OSC"/><LineBreak/><Run Text="Port: 2828"/><Run Text="2"/><LineBreak/><Run Text="Address:  "/><Span Foreground="#FFA31515" FontSize="12.6666666666667" FontFamily="Consolas"><Run Text="/nipa/starter"/></Span><LineBreak/><Run Text="Arguments:"/><Run Text=" "/><Span Foreground="#FFA31515" FontSize="12.6666666666667" FontFamily="Consolas"><Run Text="STARTAPP"/></Span></TextBlock>
-        <Button x:Name="Button_start" Content="Start Application" Margin="10,10,10,0"  VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" Height="33.906" Click="Button_start_Click"/>
-        <TextBox x:Name="textBox_width" Height="23" Margin="92.327,98.692,0,0" TextWrapping="Wrap" VerticalAlignment="Top" d:LayoutOverrides="VerticalAlignment" HorizontalAlignment="Left" Width="125.607"/>
-        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,100.966,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82.327" Text="Screen Width"/>
-        <TextBlock x:Name="textBlock_Copy1" Margin="238.085,100.966,196.18,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left"><Run Text="Screen "/><Run Text="Height"/></TextBlock>
-        <TextBox x:Name="textBox_height" Height="23" Margin="0,98.692,70.573,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="125.607" d:LayoutOverrides="VerticalAlignment"/>
-        <Button x:Name="button_apply" Content="Apply &amp; Save" Margin="0,285.642,10,0"  VerticalAlignment="Top" Height="25.358" HorizontalAlignment="Right" Width="163.846" Click="button_apply_Click"/>
-        <TextBox x:Name="textBox_unityLogPath" Height="23" Margin="10,183.193,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock_Copy3" Margin="10,157.534,0,0" TextWrapping="Wrap" Text="Unity Log File Directry (empty for no log output)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="21.358"/>
-        <CheckBox x:Name="checkBox_awakeStart" Content="Start App when Awake" HorizontalAlignment="Left" Margin="10,0,0,83.461" VerticalAlignment="Bottom"/>
-        <CheckBox x:Name="checkBox_killExplorer" Content="Kill Explorer When App Start" Margin="172.953,0,0,83.461" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
-        <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Right" Margin="0,121.692,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158.072" Text="*Unity must be window mode"/>
-        <Button x:Name="button_openLogDir" Content="Open Log Dir" Margin="0,152.835,10,0"  VerticalAlignment="Top" Height="25.358" HorizontalAlignment="Right" Width="163.846" Click="button_openLogDir_Click" />
+        Title="NipaStarter (ver. 2)" Height="350" Width="525" ResizeMode="NoResize">
+    <Grid Background="#FFFD9742">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="28*"/>
+            <ColumnDefinition Width="429*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="190" Text="Application Path" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="textBox_appPath" Height="23" Margin="10,69,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+        <TextBlock x:Name="textBlock_Copy2" Margin="10,0,0,10" TextWrapping="Wrap" Height="65" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="370" Grid.ColumnSpan="4"><Run Text="Start App via OSC"/><LineBreak/><Run Text="Port: 2828"/><Run Text="2"/><LineBreak/><Run Text="Address:  "/><Span Foreground="#FFA31515" FontSize="12.6666666666667" FontFamily="Consolas"><Run Text="/nipa/starter"/></Span><LineBreak/><Run Text="Arguments:"/><Run Text=" "/><Span Foreground="#FFA31515" FontSize="12.6666666666667" FontFamily="Consolas"><Run Text="STARTAPP"/></Span></TextBlock>
+        <Button x:Name="Button_start" Content="Start Application" Margin="10,10,10,0"  VerticalAlignment="Top" Height="34" Click="Button_start_Click" Grid.ColumnSpan="4"/>
+        <TextBox x:Name="textBox_width" Height="23" Margin="2,99,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Width="126" Grid.Column="3"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" Margin="10,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Text="Screen Width" Grid.ColumnSpan="4"/>
+        <TextBlock x:Name="textBlock_Copy1" Margin="148,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="3"><Run Text="Screen "/><Run Text="Height"/></TextBlock>
+        <TextBox x:Name="textBox_height" Height="23" Margin="0,99,70,0" TextWrapping="Wrap" VerticalAlignment="Top" HorizontalAlignment="Right" Width="126" Grid.Column="3"/>
+        <Button x:Name="button_apply" Content="Apply &amp; Save" Margin="0,286,10,0"  VerticalAlignment="Top" Height="25" HorizontalAlignment="Right" Width="164" Click="button_apply_Click" Grid.Column="3"/>
+        <TextBox x:Name="textBox_unityLogPath" Height="23" Margin="10,183,10,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
+        <TextBlock x:Name="textBlock_Copy3" Margin="10,158,0,0" TextWrapping="Wrap" Text="Unity Log File Directry (empty for no log output)" HorizontalAlignment="Left" VerticalAlignment="Top" Height="22" Grid.ColumnSpan="4"/>
+        <CheckBox x:Name="checkBox_awakeStart" Content="Start App when Awake" HorizontalAlignment="Left" Margin="10,0,0,83" VerticalAlignment="Bottom" Grid.ColumnSpan="4"/>
+        <CheckBox x:Name="checkBox_killExplorer" Content="Kill Explorer When App Start" Margin="83,0,0,83" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Column="3"/>
+        <TextBlock x:Name="textBlock_Copy4" HorizontalAlignment="Right" Margin="0,122,9,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="159" Text="*Unity must be window mode" Grid.Column="3"/>
+        <Button x:Name="button_openLogDir" Content="Open Log Dir" Margin="0,153,10,0"  VerticalAlignment="Top" Height="25" HorizontalAlignment="Right" Width="164" Click="button_openLogDir_Click" Grid.Column="3" />
 
     </Grid>
 </Window>

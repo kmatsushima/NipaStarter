@@ -52,7 +52,8 @@ namespace NipaStarter
             {
                 while (_Receiver.State != OscSocketState.Closed)
                 {
-                    if (_Receiver.State == OscSocketState.Connected)
+					Thread.Sleep(1);
+					if (_Receiver.State == OscSocketState.Connected)
                     {
                         OscPacket packet;
 
